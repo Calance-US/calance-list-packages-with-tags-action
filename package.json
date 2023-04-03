@@ -4,9 +4,7 @@
   "description": "[![GitHub Super-Linter](https://github.com/Calance-US/public-repository-template/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)",
   "main": "index.js",
   "scripts": {
-    
     "build": "ncc build index.js -m"
-  
   },
   "repository": {
     "type": "git",
@@ -24,6 +22,11 @@
     "@actions/github": "^5.1.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.36.1"
+    "@vercel/ncc": "^0.36.1",
+    "eslint": "^8.37.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1"
   }
 }
