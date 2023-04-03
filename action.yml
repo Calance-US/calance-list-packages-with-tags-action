@@ -1,0 +1,24 @@
+name: List packages with tags
+description: List packages with tags
+
+inputs:
+  image_name:
+    description: Image Names in CSV format 
+    required: true
+  package_type:
+    description: Enter the package type (Options are container,docker,npm etc.)
+    required: true
+  organization:
+    description: Enter the name of organization
+    required: true
+  IMAGE_CLEANUP_TOKEN:
+    description: Github token with permissions - read:packages, write:packages, delete-packages
+    required: true
+
+outputs:
+  packages-with-tags:
+    description: Packages with their tags
+    
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

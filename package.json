@@ -1,0 +1,29 @@
+{
+  "name": "calance-list-packages-with-tags-action",
+  "version": "1.0.0",
+  "description": "[![GitHub Super-Linter](https://github.com/Calance-US/public-repository-template/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)",
+  "main": "index.js",
+  "scripts": {
+    
+    "build": "ncc build index.js -m"
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Calance-US/calance-list-packages-with-tags-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Calance-US/calance-list-packages-with-tags-action/issues"
+  },
+  "homepage": "https://github.com/Calance-US/calance-list-packages-with-tags-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
+  }
+}
