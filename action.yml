@@ -11,7 +11,7 @@ inputs:
   organization:
     description: Enter the name of organization
     required: true
-  GITHUB_TOKEN:
+  GET_PACKAGES_TOKEN:
     description: Github token with permissions - read:packages
     required: true
 
