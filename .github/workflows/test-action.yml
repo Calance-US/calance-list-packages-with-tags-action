@@ -1,0 +1,22 @@
+name: TestCase 1 - Testing the working of action
+on:
+  push:
+    branches:
+      - "list-packages-with-tags"  # Enter the branch you want to test
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (clone the repo for use)
+        uses: actions/checkout@v3
+      - uses: Calance-US/calance-list-packages-with-tags-action@list-packages-with-tags
+        id: list-packages-with-tags
+        with:
+          image_name: calance-workflows
+          package_type: container
+          organization: Calance-US
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Echo the outputs
+        run: |
+          echo ${{ steps.list-packages-with-tags.outputs.packages-with-tags }}

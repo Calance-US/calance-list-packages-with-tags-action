@@ -6,7 +6,7 @@ const listPackagesWithTags = async () => {
     const versionedPackages = []
     let packagesArray = core.getInput('image_name', { required: true })
     packagesArray = packagesArray.split(',').map(x => x.trim())
-    const token = core.getInput('IMAGE_CLEANUP_TOKEN', { required: true })
+    const token = core.getInput('GITHUB_TOKEN', { required: true })
     const github = Github.getOctokit(token)
     const packageType = core.getInput('package_type', { required: true })
     const organization = core.getInput('organization', { required: true })
