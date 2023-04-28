@@ -6,8 +6,7 @@ const listPackagesWithTags = async () => {
     const versionedPackages = []
     let packagesArray = core.getInput('image_name', { required: true })
     console.log(packagesArray)
-    packagesArray = packagesArray.replace(`"`,"")
-    packagesArray = packagesArray.replace(`'`,"")
+    packagesArray = packagesArray.replaceAll(`"`,"")
     console.log(packagesArray)
     packagesArray = packagesArray.split(',').map(x => x.trim())
     console.log(packagesArray)
