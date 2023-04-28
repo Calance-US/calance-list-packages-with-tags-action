@@ -9,6 +9,7 @@ const listPackagesWithTags = async () => {
     packagesArray = packagesArray.replace(`"`, "")
     console.log(packagesArray)
     packagesArray = packagesArray.split(',').map(x => x.trim())
+    console.log(packagesArray)
     const token = core.getInput('GET_PACKAGES_TOKEN', { required: true })
     const github = Github.getOctokit(token)
     const packageType = core.getInput('package_type', { required: true })
