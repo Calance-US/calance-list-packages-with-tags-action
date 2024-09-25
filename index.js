@@ -5,7 +5,7 @@ const listPackagesWithTags = async () => {
   try {
     const versionedPackages = []
     let packagesArray = core.getInput('image_name', { required: true })
-    packagesArray = packagesArray.replaceAll(`"`,"")
+    packagesArray = packagesArray.replaceAll('\'', '')
     packagesArray = packagesArray.split(',').map(x => x.trim())
     const token = core.getInput('GET_PACKAGES_TOKEN', { required: true })
     const github = Github.getOctokit(token)
@@ -21,7 +21,7 @@ const listPackagesWithTags = async () => {
       const resp2 = resp1.data.map(data => data.metadata)
       for (let j = 0; j < resp2.length; j++) {
         const tags = resp2[j].container.tags
-        if (tags === []) {
+        if (tags.length === 0) {
           continue
         } else {
           for (let k = 0; k < tags.length; k++) {
