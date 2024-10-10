@@ -20,5 +20,5 @@ outputs:
     description: Packages with their tags
     
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
