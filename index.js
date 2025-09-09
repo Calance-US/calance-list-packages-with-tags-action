@@ -4,7 +4,15 @@ const Github = require('@actions/github')
 const listPackagesWithTags = async () => {
   try {
     const versionedPackages = []
+    core.debug('started')
     let packagesArray = core.getInput('image_name', { required: true })
+    try {
+      packagesArray = JSON.parse(packagesArray)
+    } catch (e) {
+      core.debug(packagesArray)
+      core.setFailed('Error parsing the packages array')
+    }
+    core.debug(packagesArray)
     // packagesArray = packagesArray.replaceAll('\'', '')
     // packagesArray = packagesArray.split(',').map(x => x.trim())
     const token = core.getInput('GET_PACKAGES_TOKEN', { required: true })
